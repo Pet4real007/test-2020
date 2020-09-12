@@ -1,0 +1,146 @@
+Course:		Essential Google Cloud Infrastructure: Foundation
+
+Module: 	Virtual Machines
+
+Lab: 		Creating Virtual Machines
+
+
+Objectives
+-->In this lab, you explore the available options for VMs and see the differences between locations.
+
+-->In this lab, you learn how to perform the following tasks:
+
+-->Create several standard VMs
+
+-->Create advanced VMs
+
+
+
+Task 1: Create a utility virtual machine
+
+	In the Cloud Console, on the Navigation menu, click Compute Engine > VM instances.
+	
+	Click Create.
+
+	For Name, type a name for your instance. Hover over the question mark icon for advice about what constitutes a properly formed name.
+
+	For Region and Zone select us-central1 and us-central1-c respectively.
+
+	For Machine type, examine the options.
+
+	Click Details to the right of the Machine type list to see the breakdown of estimated costs.
+
+	For Machine type, click n1-standard-4 (4 vCPUs, 15 GB memory). How did the cost change?
+
+	For Machine type, click n1-standard-1 (1 vCPUs, 3.75 GB memory).
+
+	Click Management, security, disks, networking, sole tenancy.
+
+	Click Networking.
+
+	For Network interfaces, click the Edit icon (Edit).
+
+	Select None for External IP.
+
+	Click Done.
+
+
+## To Explore the VM logs
+
+	On the VM instance details page for your VM, click Stackdriver Logging.
+
+	Click the small triangle to the left of one of the lines to see the kind of information it contains.
+	
+	On the far right, click View Options > Expand All.
+
+
+
+Task 2: Create a Windows virtual machine
+
+	On the Navigation menu click Compute Engine > VM instances.
+	
+	Click Create instance, then specify the following...
+
+	Name			Type a name for your VM
+	Region			europe-west2
+	Zone			europe-west2-a
+	Machine type		n1-standard-2(2 vCPUs, 7.5 GB memory)
+	Boot disk		Change
+	Public Images > Operating system	Windows Server
+	Version	Windows 	Server 2016 Datacenter Core
+	Boot disk type		SSD persistent disk
+	Size (GB)		100
+
+	Click Select.
+	
+	For Firewall, enable Allow HTTP traffic and Allow HTTPS traffic.
+	
+	Click Create.
+
+
+## To Set the password for the VM, do the following...
+
+	Click on the name of your Windows VM to access the VM instance details.
+	
+	You don't have a valid password for this Windows VM: you cannot log in to the Windows VM without a password. Click Set Windows password.
+	
+	Click Set.
+	
+	Copy the provided password, and click CLOSE.
+
+
+
+Task 3: Create a custom virtual machine
+
+	On the Navigation menu, click Compute Engine > VM instances.
+	
+	Click Create instance and specify the following...
+
+
+	Name		Type a name for your VM
+
+	Region		us-west1
+
+	Zone		us-west1-b
+
+	Machine type	Custom
+
+	Cores		6 vCPU
+
+	Memory		32 GB
+
+	Click Create.
+
+
+## To Connect via SSH to your custom VM, do the following...
+
+	For the custom VM you just created, click SSH.
+
+	To see information about unused and used memory and swap space on your custom VM, run the following command:
+
+		free
+
+
+	To see details about the RAM installed on your VM, run the following command:
+
+		sudo dmidecode -t 17
+
+
+	To verify the number of processors, run the following command:
+
+		nproc
+
+
+	To see details about the CPUs installed on your VM, run the following command:
+
+		lscpu
+
+
+	To exit the SSH terminal, run the following command:
+
+		exit
+
+
+## To End your lab...
+
+	When you have completed your lab, click End Lab. Qwiklabs removes the resources you’ve used and cleans the account for you.
